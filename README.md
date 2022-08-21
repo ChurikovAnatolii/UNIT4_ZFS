@@ -56,7 +56,8 @@
 >  unit4/filesystem3  3.34M   497M     3.34M  /unit4/filesystem3  
 >  unit4/filesystem4  9.90M   490M     9.90M  /unit4/filesystem4  
 
--***Вывод: наименьтший размер занятый файлом на файловой системе 2, где применен метод сжатия gzip***
+-***Вывод: наименьтший размер занятый файлом на файловой системе 2, где применен метод сжатия gzip***  
+
 ---
 ### 2. Определить настройки pool’a. 
 
@@ -72,12 +73,27 @@
 >           /home/vagrant/zpoolexport/fileb  ONLINE
 >
 >  zpool import -d zpoolexport otus
+>  zpool upgrade otus  
 
 -***Определяем настройки пула***
 
 > zfs get all otus >> settings_otus.txt -__Записываем настройки пула otus в файл__ [параметров](https://github.com/ChurikovAnatolii/UNIT4_ZFS/blob/main/settings_otus.txt)  
->  zfs get all otus/hometask2 >> settings_hometask2.txt -__Записываем настройки пула otus/hometask2 в файл__ [параметров](https://github.com/ChurikovAnatolii/UNIT4_ZFS/blob/main/settings_hometask2.txt)
+- **Размер хранилища - 350Mb**  
+- **Тип pool - mirror**  
+- **recordsize - 128Kb**  
+- **сжатие - zle**  
+- **контрольная сумма -sha256**   
 
+>  zfs get all otus/hometask2 >> settings_hometask2.txt -__Записываем настройки пула otus/hometask2 в файл__ [параметров](https://github.com/ChurikovAnatolii/UNIT4_ZFS/blob/main/settings_hometask2.txt)
+- **Размер хранилища - 350Mb**  
+- **Тип pool - mirror**  
+- **recordsize - 128Kb**  
+- **сжатие - zle**  
+- **контрольная сумма -sha256**   
+---
+### 3. Найти сообщение от преподавателей
+
+-***Определяем настройки пула***
 
 
 
