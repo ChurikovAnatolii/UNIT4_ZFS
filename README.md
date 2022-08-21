@@ -93,9 +93,14 @@
 ---
 ### 3. Найти сообщение от преподавателей
 
--***Определяем настройки пула***
+-***Копируем snapshot, восстанавливаем в пул, ищем файл secret_message***
 
+> wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG' -O snap   
+> zfs receive -F otus/snap < snap  
+> find /${pwd} -name secret  
+> cat /otus/snap/task1/file_mess/secret_message   
 
+-***Секретное сообщение: https://github.com/sindresorhus/awesome***
 
 
 
