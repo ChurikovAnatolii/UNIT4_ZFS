@@ -75,8 +75,9 @@
 
 -***Определяем настройки пула***
 
+> zfs get all otus/hometask2 >> settings_hometask2.txt -__Записываем настройки пула otus в файл__ [параметров](https://github.com/ChurikovAnatolii/UNIT4_ZFS/blob/main/settings_otus.txt)  
+>  zfs get all otus/hometask2 >> settings_hometask2.txt -__Записываем настройки пула otus/hometask2 в файл__ [параметров](https://github.com/ChurikovAnatolii/UNIT4_ZFS/blob/main/settings_hometask2.txt)
 
->  zfs get all otus/hometask2 >> settings_hometask2.txt - __ Записываем настройки пула otus/hometask2 в файл   
 
 
 
