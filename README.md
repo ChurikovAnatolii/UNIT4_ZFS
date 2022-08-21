@@ -57,10 +57,26 @@
 >  unit4/filesystem4  9.90M   490M     9.90M  /unit4/filesystem4  
 
 -***Вывод: наименьтший размер занятый файлом на файловой системе 2, где применен метод сжатия gzip***
-
+---
 ### 2. Определить настройки pool’a. 
 
--***
+-***Скачиваем архив, распаковываем, восстанавливаем пул***
+
+>  wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg' -O arch.tar.gz  
+> tar -xzvf arch.tar.gz
+
+>  zpool import -d zpoolexport  
+>  otus                                 ONLINE  
+>         mirror-0                           ONLINE  
+>           /home/vagrant/zpoolexport/filea  ONLINE  
+>           /home/vagrant/zpoolexport/fileb  ONLINE
+>
+>  zpool import -d zpoolexport otus
+
+-***Определяем настройки пула***
+
+
+>  zfs get all otus/hometask2 >> settings_hometask2.txt - __ Записываем настройки пула otus/hometask2 в файл   
 
 
 
