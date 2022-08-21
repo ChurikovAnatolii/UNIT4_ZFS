@@ -37,7 +37,29 @@
 > zfs set quota=500M unit4/filesystem1  
 > zfs set quota=500M unit4/filesystem2  
 > zfs set quota=500M unit4/filesystem3  
-> zfs set quota=500M unit4/filesystem4  
+> zfs set quota=500M unit4/filesystem4
+>
+> zfs set compression=zstd unit4/filesystem1    
+> zfs set compression=gzip unit4/filesystem2  
+> zfs set compression=zle unit4/filesystem3   
+> zfs set compression=lzjb unit4/filesystem4  
+
+-***Скачиваем файлик, раскидываем по ФС, смотрим где сколько места осталось***  
+
+> wget -O war_and_peace.txt http://www.gutenberg.org/ebooks/2600.txt.utf-8   
+> cp -r war_and_peace.txt /unit4/filesystem[1-4]  
+> zfs list  
+>  NAME                USED  AVAIL     REFER  MOUNTPOINT  
+>  unit4              20.1M  1.69G     3.42M  /unit4  
+>  unit4/filesystem1  1.46M   499M     1.46M  /unit4/filesystem1  
+>  unit4/filesystem2  1.42M   499M     1.42M  /unit4/filesystem2  
+>  unit4/filesystem3  3.34M   497M     3.34M  /unit4/filesystem3  
+>  unit4/filesystem4  9.90M   490M     9.90M  /unit4/filesystem4  
+
+-***Вывод: наименьтший размер занятый файлом на файловой системе 2, где применен метод сжатия gzip***
+
+
+
 
 
 
